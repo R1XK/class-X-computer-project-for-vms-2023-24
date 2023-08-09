@@ -18,19 +18,33 @@ public class Question6 {
         System.out.println(s);
     }
 
-    public static void series(int a,int b){
-        int s=0;
-        for (int i=a; i<=b; i++){
-            int p=0, c=0;
-            for (int j=2; j<=i/2;j++){
-                if (i%j==0)
-                    c++;
+    public static void series(int a, int b) {
+    int s = 0;
+    boolean isFirst = true; // To track whether it's the first prime number
+
+    for (int i = a; i <= b; i++) {
+        int c = 0;
+        for (int j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                c++;
+                break; // Break as soon as we find a factor
             }
-            p = c!=0? 0 : i;
-            s+=p;
         }
-        System.out.println(s);
+        
+        if (c == 0) {
+            if (!isFirst) {
+                System.out.print("+"); // Print "+" for all primes except the first one
+            } else {
+                isFirst = false;
+            }
+            
+            s += i;
+            System.out.print(i);
+        }
     }
+        System.out.println("=" + s);
+    }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
