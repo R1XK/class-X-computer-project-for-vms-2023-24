@@ -1,6 +1,7 @@
 public class Line{
     int x1, y1;
     int x2, y2;
+    double distance;
 
     public Line(){
         x1=0; y1=0;
@@ -13,8 +14,8 @@ public class Line{
     }
 
     public void distance() {
-        double dist = (double) Math.sqrt((this.x2 - this.x1) * (this.x2 - this.x1) + (this.y2 - y1) * (this.y2 - this.y1));
-        System.out.println("distance: " + dist);
+        distance = (double) Math.sqrt((this.x2 - this.x1) * (this.x2 - this.x1) + (this.y2 - y1) * (this.y2 - this.y1));
+        System.out.println("distance: " + distance);
     }
 
     public void midPoint() {
@@ -25,6 +26,8 @@ public class Line{
 
     public void display(){
         System.out.println("Points: (" + x1 + "," + y1 + ")" + ", (" + x2 + "," + y2 + ")");
+        distance();
+        midPoint();
     }
 
     public Line compare(Line p, Line q){
@@ -39,13 +42,13 @@ public class Line{
 
         System.out.println("For line PQ: ");
         PQ.display();
-        PQ.distance();
-        PQ.midPoint();
+
+        System.out.println();
 
         System.out.println("For line AB: ");
         AB.display();
-        AB.distance();
-        AB.midPoint();
+
+        System.out.println();
 
         Line maxLine = PQ.compare(PQ, AB);
         System.out.println("The longer line is:");
