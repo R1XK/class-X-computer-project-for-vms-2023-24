@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Question5{
 
     public static void pattern(int h){
