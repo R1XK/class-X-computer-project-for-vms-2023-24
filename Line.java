@@ -31,10 +31,7 @@ public class Line{
     }
 
     public Line compare(Line p, Line q){
-        double distP = (float) Math.sqrt((p.x1 - p.x2) * (p.x1 - p.x2) + (p.y1 - p.y2) * (p.y1 - p.y2));
-        double distQ = (float) Math.sqrt((q.x1 - q.x2) * (q.x1 - q.x2) + (q.y1 - q.y2) * (q.y1 - q.y2));
-
-        return distP>distQ? p : q;
+        return p.distance > q.distance? p : q;
     }
     public static void main(String[] args) {
         Line PQ = new Line(5, 5, -5, -5);
