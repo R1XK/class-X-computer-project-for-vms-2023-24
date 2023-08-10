@@ -25,30 +25,15 @@ class Question5{
     } 
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your option: \n <1> Number Right-angle Triangle \n <2> Charecter Right-angleTriangle \n <3> Charecter rectangle");
-        int opt = sc.nextInt();
+        System.out.println("Pattern 1: ");
+        pattern(5);
+        System.out.println();
+        System.out.println("Pattern 2: ");
+        pattern(4, '#');
+        System.out.println();
+        System.out.println("Pattern 3: ");
+        pattern(7, 3, '#');
 
-        System.out.println("Enter required fields: ");
-
-        switch (opt){
-            case 1: 
-                pattern(sc.nextInt());
-            break;
-
-            case 2:
-                pattern(sc.nextInt() , sc.next().charAt(0));
-            break;
-
-            case 3:
-                pattern(sc.nextInt(), sc.nextInt(), sc.next().charAt(0));
-            break;
-
-            default:
-                System.out.println("Invalid Option");
-        }
-
-        sc.close();
     }
 
 }
